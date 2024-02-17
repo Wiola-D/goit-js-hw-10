@@ -1,5 +1,7 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
 import './styles.css';
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 
 import Notiflix from 'notiflix';
 
@@ -12,6 +14,9 @@ async function fetchData() {
     loader.classList.remove('hidden');
     const breedsData = await fetchBreeds();
     renderSelect(breedsData);
+    new SlimSelect({
+      select: '#single',
+    });
   } catch (error) {
     Notiflix.Notify.failure(
       'Oops! Something went wrong! Try reloading the page!'
@@ -30,7 +35,6 @@ function renderSelect(breeds) {
     .join('');
   breedSelect.innerHTML = markup;
   loader.classList.add('hidden');
-  breedSelect.classList.remove('hidden');
 }
 
 breedSelect.addEventListener('change', async e => {
@@ -52,8 +56,8 @@ function renderCat(catData) {
   const newDiv = `
 
 <img src="${url}" alt="${name}" width="800"/>
-<div class="cat-description"
-<h2>${name}</h2>
+<div class="cat-description">
+<h2 class="name">${name}</h2>
 <p><strong>Description: </strong>
 ${description}</p>
 <p><strong>Temperament: </strong>

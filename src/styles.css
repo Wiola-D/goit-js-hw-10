@@ -1,0 +1,129 @@
+body {
+  font-family: 'Exo', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-size: 24px;
+}
+.hidden {
+  display: none;
+}
+strong {
+  color: #1884a5;
+}
+body {
+  max-width: 100%vh;
+  color: #eeeeee;
+  background-image: url(https://www.desktopbackground.org/download/1920x1080/2013/08/07/619138_wallpapers-amd-ziemia-jpg-tapety-kosmos-2560x1600_2560x1600_h.jpg);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+img {
+  border-radius: 40px;
+}
+.container {
+  margin: auto;
+}
+
+.cat-description {
+  border-radius: 50px;
+  background-color: #00000088;
+}
+.breed-select {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  background-color: #ff50d3bb;
+  color: #000000;
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  letter-spacing: 3px;
+  font-size: 25px;
+}
+
+.loader-container {
+  display: block;
+  margin: auto;
+}
+.cat-info {
+  width: 800px;
+  margin: auto;
+}
+h2 {
+  color: #ff50d3;
+}
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  color: #ff50d3;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  top: 30%;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 500ms spin linear infinite;
+}
+.loader:after {
+  color: #1884a5;
+  transform: rotateY(70deg);
+  animation-delay: 0.5s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}

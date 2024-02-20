@@ -16,6 +16,11 @@ async function fetchData() {
     renderSelect(breedsData);
     new SlimSelect({
       select: '#single',
+      settings: {
+        closeOnSelect: true,
+        hideSelected: true,
+        openPosition: 'auto',
+      },
     });
   } catch (error) {
     Notiflix.Notify.failure(
@@ -44,6 +49,7 @@ breedSelect.addEventListener('change', async e => {
       renderCat(data[0])
     );
   } catch (error) {
+    catInfo.innerHTML = '';
     Notiflix.Notify.failure(
       'Sorry, something went wrong. Please choose another cat breed.'
     );

@@ -10,17 +10,44 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+    />
     <title>Homework 10</title>
   </head>
   <body>
-    <select id="single" class="hidden breed-select"></select>
     <div class="container">
-      <p class="loader-container hidden">
-        <span class="loader"></span>
-      </p>
-      <p class="error"></p>
-      <div class="cat-info"></div>
+      <section class="background">
+        <div class="content-wrapper">
+          <p class="content-title">Welcome to the cat-space!</p>
+
+          <p class="content-subtitle">
+            If you want ee these magical creatures out of this world <br />
+            <span class="scroll-down">Scroll down !</span>
+          </p>
+          <i class="fa-solid fa-arrow-down"></i>
+        </div>
+      </section>
+      <section class="background bg-2">
+        <div class="content-wrapper">
+          <select id="single" class="hidden breed-select"></select>
+          <div class="cat-container">
+            <div class="cat-info"></div>
+          </div>
+        </div>
+      </section>
     </div>
-    <script src="index.js" type="module"></script>
+    <p class="loader-container hidden">
+      <span class="loader"></span>
+    </p>
+    <p class="error"></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/parallax.js" type="module"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js
+"></script>
   </body>
 </html>

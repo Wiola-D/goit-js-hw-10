@@ -1,7 +1,8 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
-import './styles.css';
+import '../styles.css';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
+import './parallax';
 
 import Notiflix from 'notiflix';
 
@@ -61,7 +62,7 @@ function renderCat(catData) {
   const { name, temperament, description } = catData.breeds[0];
   const newDiv = `
 
-<img src="${url}" alt="${name}" width="800"/>
+<img class="image" src="${url}" alt="${name}" data-source="${url}" />
 <div class="cat-description">
 <h2 class="name">${name}</h2>
 <p><strong>Description: </strong>
@@ -73,3 +74,13 @@ ${temperament}</p>
   catInfo.innerHTML = newDiv;
   loader.classList.add('hidden');
 }
+
+catInfo.addEventListener('click', event => {
+  event.preventDefault();
+
+  const lightbox = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600">
+  `);
+
+  lightbox.show();
+});
